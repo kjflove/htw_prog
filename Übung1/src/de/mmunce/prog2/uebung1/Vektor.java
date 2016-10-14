@@ -3,7 +3,7 @@ package de.mmunce.prog2.uebung1;
 import java.util.Arrays;
 
 /**
- * Klasse für mehrdimensionale Vektoren
+ * Klasse zur Erzeugung von n-dimensionalen Zeilen- und Spaltenvektoren
  * 
  * @author Marcel Munce
  */
