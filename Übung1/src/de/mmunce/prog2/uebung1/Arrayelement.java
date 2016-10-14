@@ -11,7 +11,7 @@ public class Arrayelement {
 	 * @return array mit häufigsten Elementen
 	 */
 	public static byte[] haeufigstesElem(byte[] arr) {
-		
+
 		// Array sortieren, damit inkrementell gesucht/gezählt werden kann
 		Arrays.sort(arr);
 
@@ -24,7 +24,7 @@ public class Arrayelement {
 		int tmpCount = 1;
 		// Zähler für das insgesamt am häufigsten vorkommende Element
 		int maxCount = 1;
-		
+
 		for(int i = 1; i < arr.length; i++) {
 			if(arr[i] == temp) {
 				// Gleiche Werte im array folgen aufeinander (Da sortiert)
@@ -39,19 +39,14 @@ public class Arrayelement {
 				} else if(tmpCount == maxCount) {
 					// Zuletzt gezähltes Element kommt genau so häufig wie die bisher häufigsten vor
 					// -> Alle Elemente als häufigstes speichern
-					byte[] tmp = new byte[max.length + 1];
-					for(int j = 0; j < max.length; j++) {	// Kopieren des alten max Arrays in größeres Array
-						tmp[j] = max[j];
-					}
-					tmp[tmp.length - 1] = arr[i-1];	// Zuletzt gezählstes Element hinzufügen
-					max = tmp;
+					max = addToArray(max, arr[i - 1]);
 				}
-				
+
 				temp = arr[i];	// Pointer aktualisieren
 				tmpCount = 1;	// Zähler zurücksetzen
 			}
 		}
-		
+
 		// Wenn aktueller Zähler größer als max, gib zuletzt gezähltess Element zurück (Weil sortiert!)
 		// Ansonsten die zwischengespeicherten Elemente
 		if(tmpCount > maxCount) {
@@ -59,5 +54,21 @@ public class Arrayelement {
 		} else {
 			return max;
 		}
+	}
+
+	/**
+	 * Fügt ein byte einem byte array hinzu.<br>
+	 * Rückgabe ist ein neues Array mit der alten Größe + 1
+	 * @param old altes Array
+	 * @param toAdd Wert der hinzugefügt werden soll
+	 * @return neues Array
+	 */
+	private static byte[] addToArray(byte[] old, byte toAdd) {
+		byte[] tmp = new byte[old.length + 1];
+		for(int j = 0; j < old.length; j++) {	// Kopieren des alten Arrays in größeres Array
+			tmp[j] = old[j];
+		}
+		tmp[tmp.length - 1] = toAdd;	// Element hinzufügen
+		return tmp;
 	}
 }
