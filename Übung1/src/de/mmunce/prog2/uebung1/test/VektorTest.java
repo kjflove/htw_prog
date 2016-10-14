@@ -1,4 +1,6 @@
-package de.mmunce.prog2.uebung1;
+package de.mmunce.prog2.uebung1.test;
+
+import de.mmunce.prog2.uebung1.Vektor;
 
 public class VektorTest {
 
