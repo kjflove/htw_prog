@@ -3,7 +3,7 @@ package de.mmunce.prog2.uebung1;
 import java.util.Arrays;
 
 /**
- * Klasse für mehrdimensionale Vektoren
+ * Klasse für Vektoren
  * 
  * @author Marcel Munce
  */
