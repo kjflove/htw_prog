@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * Klasse zur Erzeugung von n-dimensionalen Zeilen- und Spaltenvektoren
  * 
- * @author Marcel Munce
+ * @author Marcel Munce - s0555992
  */
 public class Vektor {
     

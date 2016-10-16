@@ -2,6 +2,11 @@ package de.mmunce.prog2.uebung1.test;
 
 import de.mmunce.prog2.uebung1.Vektor;
 
+/**
+ * Testklasse für {@link Vektor}
+ * @author Marcel Munce - s0555992
+ *
+ */
 public class VektorTest {
 
 	public static void main(String[] args) {
