@@ -6,11 +6,17 @@ public class Arrayelement {
 
 	/**
 	 * Gibt die häufigsten Elemente in einem Array aus bytes zurück. <br>
-	 * Wenn mehrere Elemente gleich oft vorkommen, enthält das Ergebnisarray mehrere Elemente;
+	 * Wenn mehrere Elemente gleich oft vorkommen, enthält das Ergebnisarray mehrere Elemente.<br>
+	 * Sofern das übergebene Array leer ist, ist auch das Ergebnisarray leer.
 	 * @param arr zu durchsuchendes Array
 	 * @return array mit häufigsten Elementen
 	 */
 	public static byte[] haeufigstesElem(byte[] arr) {
+		
+		// Leeres Eingabearray
+		if(arr.length == 0) {
+			return new byte[0];
+		}
 
 		// Array sortieren, damit inkrementell gesucht/gezählt werden kann
 		Arrays.sort(arr);
