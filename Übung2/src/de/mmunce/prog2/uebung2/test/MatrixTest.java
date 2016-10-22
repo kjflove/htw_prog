@@ -9,6 +9,11 @@ import org.junit.Test;
 
 import de.mmunce.prog2.uebung2.Matrix;
 
+/**
+ * Klasse zum Testen von {@link Matrix}
+ * @author Marcel Munce - s0555992
+ *
+ */
 public class MatrixTest {
 
 	private float[][] data;
@@ -23,6 +28,10 @@ public class MatrixTest {
 		};
 		m1 = new Matrix(data);
 	}
+	
+	/**
+	 *	Test f¸r Hilfsmethode zum Kopieren eines mehrdimensionalen Arrays. 
+	 */
 	@Test
 	public void testArrayCopy() {
 		float[][] arr = new float[][]{
@@ -35,6 +44,9 @@ public class MatrixTest {
 		assertFalse(Arrays.deepEquals(arr, copy));
 	}
 	
+	/**
+	 * Test {@link Matrix#equals(Object)} Normalfall
+	 */
 	@Test
 	public void testEqualsSuccess() {
 		float[][] data2 = new float[][] {
@@ -46,6 +58,9 @@ public class MatrixTest {
 		assertTrue(m1.equals(m2));
 	}
 	
+	/**
+	 * Test {@link Matrix#equals(Object)} ungleich
+	 */
 	@Test
 	public void testEqualsFail() {
 		float[][] data2 = copyData(data);
@@ -54,18 +69,18 @@ public class MatrixTest {
 		assertFalse(m1.equals(m2));
 	}
 	
-	private float[][] copyData(float[][] data) {
-		return Arrays.stream(data)
-				.map((float[] row) -> row.clone())
-				.toArray((int length) -> new float[length][]);
-	}
-	
+	/**
+	 * Test {@link Matrix#equals(Object)} leere
+	 */
 	@Test
 	public void testEqualsEmpty() {
 		Matrix m2 = new Matrix(new float[0][0]);
 		assertFalse(m1.equals(m2));
 	}
 
+	/**
+	 * Test {@link Matrix#multiply(Matrix)} Normalfall
+	 */
 	@Test
 	public void testMultiplySuccess() {
 		float[][] data2 = {
@@ -83,6 +98,9 @@ public class MatrixTest {
 		assertTrue(Arrays.deepEquals(should, product.getData()));
 	}
 	
+	/**
+	 * Test {@link Matrix#multiply(Matrix)} mit nicht verkettbaren Matrizen.
+	 */
 	@Test
 	public void testMultiplyFail() {
 		float[][] data2 = {
@@ -108,7 +126,9 @@ public class MatrixTest {
 		}
 		assertNotNull(e);
 	}
-	
+	/**
+	 * Test {@link Matrix#multiply(Matrix)} mit einspaltiger Matrix
+	 */
 	@Test
 	public void testMultiplyVectorSuccess() {
 		float[][] data2 = {
@@ -126,6 +146,9 @@ public class MatrixTest {
 		assertTrue(Arrays.deepEquals(should, prod.getData()));
 	}
 	
+	/**
+	 * Test {@link Matrix#multiplyScalar(float)} mit positivem Skalar
+	 */
 	@Test
 	public void testMultiplyScalarPos() {
 		float scalar = 2f;
@@ -138,6 +161,9 @@ public class MatrixTest {
 		assertTrue(Arrays.deepEquals(should, m2.getData()));
 	}
 	
+	/**
+	 * Test {@link Matrix#multiplyScalar(float)} mit Skalar 0 
+	 */
 	@Test
 	public void testMultiplyScalarZero() {
 		float scalar = 0f;
@@ -150,6 +176,9 @@ public class MatrixTest {
 		assertTrue(Arrays.deepEquals(should, m2.getData()));
 	}
 	
+	/**
+	 * Test {@link Matrix#multiplyScalar(float)} mit negativem Skalar
+	 */
 	@Test
 	public void testMultiplyScalarNeg() {
 		float scalar = -2f;
@@ -162,6 +191,9 @@ public class MatrixTest {
 		assertTrue(Arrays.deepEquals(should, m2.getData()));
 	}
 	
+	/**
+	 * Test {@link Matrix#add(Matrix)} Normalfall
+	 */
 	@Test
 	public void testAddSuccess() {
 		float[][] data2 = copyData(data);
@@ -174,6 +206,9 @@ public class MatrixTest {
 		assertTrue(Arrays.deepEquals(should, m2.getData()));
 	}
 	
+	/**
+	 * Test {@link Matrix#add(Matrix)} mit unterschiedlich groﬂen Matrizen
+	 */
 	@Test
 	public void testAddFail() {
 		float[][] data2 = {
@@ -190,6 +225,9 @@ public class MatrixTest {
 		assertNotNull(e);
 	}
 	
+	/**
+	 * Test {@link Matrix#add(Matrix)} mit ‹bergabe <code>null</code>.
+	 */
 	@Test
 	public void testAddNull() {
 		IllegalArgumentException e = null;
@@ -200,5 +238,16 @@ public class MatrixTest {
 			e = ex;
 		}
 		assertNotNull(e);
+	}
+
+	/**
+	 * Hilfsmethode zum kopieren eines Mehrdimensionalen Arrays
+	 * @param data
+	 * @return
+	 */
+	private float[][] copyData(float[][] data) {
+		return Arrays.stream(data)
+				.map((float[] row) -> row.clone())
+				.toArray((int length) -> new float[length][]);
 	}
 }
