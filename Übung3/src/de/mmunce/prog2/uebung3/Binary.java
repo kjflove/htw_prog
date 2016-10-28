@@ -27,4 +27,5 @@ public class Binary {
 	public static String inBinary(int number) {
 		return inBinary(number, false); 
 	}
+
 }
