@@ -11,7 +11,9 @@ public class Binary {
 	public static String inBinary(int number, boolean spacePadded) {
 		StringBuffer sb = new StringBuffer();
 		for(int i = 0; i < 32; i++) {
+			// Jedes einzelne Bit von links nach rechts durchgehen und an den Ergebnisstring anhängen
 			sb.append((number >>> 31 - i) & 1);
+			// Wenn gewünscht alle 8 Bit ein Leerzeichen einfügen 
 			if(spacePadded && ((i + 1) % 8 == 0)) {
 				sb.append(" ");
 			}
@@ -27,4 +29,5 @@ public class Binary {
 	public static String inBinary(int number) {
 		return inBinary(number, false); 
 	}
+
 }
