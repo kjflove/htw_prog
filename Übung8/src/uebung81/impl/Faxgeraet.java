@@ -1,6 +1,6 @@
-package uebung71.impl;
+package uebung81.impl;
 
-import uebung71.interfaces.Fax;
+import uebung81.interfaces.Fax;
 
 /**
  * Implementierung von {@link Fax}.

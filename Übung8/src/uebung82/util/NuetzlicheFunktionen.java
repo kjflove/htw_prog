@@ -1,6 +1,6 @@
-package uebung72.util;
+package uebung82.util;
 
-import uebung72.interfaces.Vergleichbar;
+import uebung82.interfaces.Vergleichbar;
 
 public class NuetzlicheFunktionen
 {

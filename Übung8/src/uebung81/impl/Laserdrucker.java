@@ -1,6 +1,6 @@
-package uebung71.impl;
+package uebung81.impl;
 
-import uebung71.interfaces.Drucker;
+import uebung81.interfaces.Drucker;
 
 /**
  * Implementierung von {@link Drucker}.

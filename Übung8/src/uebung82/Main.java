@@ -1,7 +1,7 @@
-package uebung72;
+package uebung82;
 
-import uebung72.data.VInteger;
-import uebung72.util.NuetzlicheFunktionen;
+import uebung82.data.VInteger;
+import uebung82.util.NuetzlicheFunktionen;
 
 /**
  * Testklasse

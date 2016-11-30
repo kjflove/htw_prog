@@ -1,4 +1,4 @@
-package uebung71.interfaces;
+package uebung81.interfaces;
 
 public interface Fax
 {

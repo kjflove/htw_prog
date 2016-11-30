@@ -1,7 +1,7 @@
-package uebung71.impl;
+package uebung81.impl;
 
-import uebung71.interfaces.Drucker;
-import uebung71.interfaces.Fax;
+import uebung81.interfaces.Drucker;
+import uebung81.interfaces.Fax;
 
 /**
  * Implementierung von {@link Drucker} und {@link Fax}.

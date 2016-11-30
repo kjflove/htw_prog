@@ -1,4 +1,4 @@
-package uebung72.data;
+package uebung82.data;
 
 public class Integer
 {
